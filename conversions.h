@@ -11,11 +11,17 @@ namespace common {
 
 /*
 Converts hex character to decimal value
+
+@param hex - hex character
+@returns decimal value
 */
 int hexToDec(const char hex);
 
 /*
 Converts hex array to decimal value with type ResultT
+
+@param hex - array of hex characters
+@returns decimal value
 */
 template<typename ResultT, typename ContainerT, typename = EnableIntegral<ResultT>>
 ResultT hexToDec(const ContainerT& hexArray) {
@@ -30,11 +36,17 @@ ResultT hexToDec(const ContainerT& hexArray) {
 
 /*
 Converts hex character to binary string
+
+@param hex - hex character
+@returns string with zeros and ones
 */
 std::string hexToBinString(const char hex);
 
 /*
-Converts hex array to binary string
+Converts array of hex characters to binary string
+
+@param hex - array of hex characters
+@returns string with zeros and ones
 */
 template<typename ContainerT>
 std::string hexToBinString(const ContainerT& hexArray) {
@@ -46,7 +58,10 @@ std::string hexToBinString(const ContainerT& hexArray) {
 }
 
 /*
-Converts array of hex characters to binary array
+Converts array of hex characters to bool array
+
+@param hex - array of hex characters
+@returns array of bool values
 */
 template<typename ContainerT>
 std::vector<bool> hexToBinArray(const ContainerT& hexArray) {
@@ -62,6 +77,9 @@ std::vector<bool> hexToBinArray(const ContainerT& hexArray) {
 
 /*
 Converts decimal value to binary string
+
+@param value - integral value
+@returns string with zeros and ones
 */
 template<typename IntegralT, typename = EnableIntegral<IntegralT>>
 std::string decToBinString(const IntegralT value) {
@@ -71,6 +89,9 @@ std::string decToBinString(const IntegralT value) {
 
 /*
 Converts decimal value to hex string
+
+@param value - integral value
+@returns string with hex characters
 */
 template<typename IntegralT, typename = EnableIntegral<IntegralT>>
 std::string decToHexString(const IntegralT value) {

@@ -16,6 +16,9 @@ std::ostream& operator<<(std::ostream& stream, const Vec3<ValueT>& vec) {
 	return stream;
 }
 
+/*
+Structure representing 3-dimensional vector
+*/
 template<typename ValueT>
 struct Vec3 {
 	ValueT x{ 0 };

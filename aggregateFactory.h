@@ -5,6 +5,12 @@
 
 namespace common {
 
+/*
+Creates aggregates directly from string.
+String must contain space delimited words that can be converted to specified types
+
+Example: AggregateFactory<MyClass>::create<int, char, std::string>(line)
+*/
 template<typename AggregateType>
 class AggregateFactory {
 private:

@@ -8,7 +8,11 @@
 namespace common {
 
 /*
-Parses space-delimited string
+Reads values from space-delimited string
+
+@param T - type of values
+@param str - input string
+@returns array of values
 */
 template<typename T>
 std::vector<T> parseArray(const std::string& str) {
@@ -21,7 +25,12 @@ std::vector<T> parseArray(const std::string& str) {
 }
 
 /*
-Parses space-delimited string and puts T into Wrapper class
+Reads wrappers from space-delimited string
+
+@param T - type of values
+@param Wrapper - type of wrapper class with single arg constructor or aggregate with 1 member of type T
+@param str - input string
+@returns array of wrappers
 */
 template<typename T, typename Wrapper>
 std::vector<Wrapper> parseArray(const std::string& str) {
@@ -34,7 +43,12 @@ std::vector<Wrapper> parseArray(const std::string& str) {
 }
 
 /*
-Parses string ignoring specified delimiter
+Reads values from string delimited with specified delimiter
+
+@param T - type of values
+@param str - input string
+@param delimiter - delimiter character
+@returns array of values
 */
 template<typename T>
 std::vector<T> parseArray(const std::string& str, char delimiter) {
@@ -50,7 +64,13 @@ std::vector<T> parseArray(const std::string& str, char delimiter) {
 }
 
 /*
-Parses string ignoring specified delimiter and puts T into Wrapper class
+Reads wrappers from string delimited with specified delimiter
+
+@param T - type of values
+@param Wrapper - type of wrapper class with single arg constructor or aggregate with 1 member of type T
+@param str - input string
+@param delimiter - delimiter character
+@returns array of wrappers
 */
 template<typename T, typename Wrapper>
 std::vector<Wrapper> parseArray(const std::string& str, char delimiter) {
@@ -66,7 +86,11 @@ std::vector<Wrapper> parseArray(const std::string& str, char delimiter) {
 }
 
 /*
-Parses contiguous string of digits
+Reads digits from contiguous string
+
+@param T - type of digit
+@param str - input string
+@returns array of digits
 */
 template<typename T>
 std::vector<T> parseDigits(const std::string& str) {

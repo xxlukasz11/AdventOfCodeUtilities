@@ -17,6 +17,16 @@ struct Neighbor {
 	int col;
 };
 
+/*
+Looks for cell neighbors according to priovided policy
+
+@param container - 2 dimensional array
+@param row - index of a center cell row
+@param col - index of a center cell column
+@param radius - determines radius of the lookup
+@param policy - determines whether all, adjacent or diagonal neighbors to return
+@returns array of neighbors
+*/
 template<typename Container>
 auto findNeighbors(const Container& container, int row, int col, int radius = 1, SearchPolicy policy = SearchPolicy::ALL) {
 	const int rows = container.size();
@@ -58,11 +68,28 @@ struct Dir {
 	const int y;
 };
 
+/*
+Try to get neighbor cell in the provided direction
+
+@param container - 2 dimensional array
+@param row - index of a center cell row
+@param col - index of a center cell column
+@param dir - direction of the neighbor cell
+@returns neighbor cell or std::nullopt if cell does not exist
+*/
 template<typename Container>
 std::optional<typename Container::value_type::value_type> tryGet(const Container& container, int row, int col, Dir dir) {
 	return tryGet(container, row + dir.y, col + dir.x);
 }
 
+/*
+Try to get calue from the container
+
+@param container - 2 dimensional array
+@param row - row index of a cell
+@param col - column index of a cell
+@returns cell or std::nullopt if cell does not exist
+*/
 template<typename Container>
 std::optional<typename Container::value_type::value_type> tryGet(const Container& container, int row, int col) {
 	const int rows = container.size();
