@@ -3,24 +3,20 @@
 
 namespace common {
 
-std::string replaceFirst(const std::string& str, const std::string& from, const std::string& to) {
+void replaceFirst(std::string& str, const std::string& from, const std::string& to) {
 	auto pos = str.find(from);
 	if (pos == std::string::npos) {
-		return str;
+		return;
 	}
-	std::string newStr = str;
-	newStr.replace(pos, from.size(), to);
-	return newStr;
+	str.replace(pos, from.size(), to);
 }
 
-std::string replaceAll(const std::string& str, const std::string& from, const std::string& to) {
+void replaceAll(std::string& str, const std::string& from, const std::string& to) {
 	size_t pos = 0;
-	std::string newStr = str;
-	while ((pos = newStr.find(from, pos)) != std::string::npos) {
-		newStr.replace(pos, from.length(), to);
+	while ((pos = str.find(from, pos)) != std::string::npos) {
+		str.replace(pos, from.length(), to);
 		pos += to.length();
 	}
-	return newStr;
 }
 
 } // namespace common
