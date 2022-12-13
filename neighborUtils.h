@@ -66,8 +66,8 @@ struct Dir {
 	static const Dir LEFT;
 	static const Dir TOP_LEFT;
 
-	const int x;
-	const int y;
+	int x;
+	int y;
 };
 
 /*
