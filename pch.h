@@ -18,5 +18,6 @@
 #include "binaryTree.h"
 #include "Vec3.h"
 #include "stringUtils.h"
+#include "matrixIterator.h"
 
 #endif //PCH_H

@@ -165,6 +165,7 @@
     <ClInclude Include="conversions.h" />
     <ClInclude Include="fileReader.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="matrixIterator.h" />
     <ClInclude Include="neighborUtils.h" />
     <ClInclude Include="parserUtils.h" />
     <ClInclude Include="pch.h" />
