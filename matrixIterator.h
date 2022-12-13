@@ -44,7 +44,7 @@ inline int MatrixIterator<Container>::getRow() const {
 }
 
 template<typename Container>
-inline MatrixIterator<Container>::ValueType MatrixIterator<Container>::next() {
+inline typename MatrixIterator<Container>::ValueType MatrixIterator<Container>::next() {
 	auto currentValue = tryGet(matrix, row, col);
 	row += dir.y;
 	col += dir.x;
