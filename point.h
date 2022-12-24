@@ -9,6 +9,9 @@ struct Point {
 	ValueType x;
 	ValueType y;
 
+	Point() = default;
+	Point(ValueType x, ValueType y) : x(x), y(y) {}
+
 	bool operator==(const Point& point) const {
 		return x == point.x && y == point.y;
 	}
