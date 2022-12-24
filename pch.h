@@ -19,5 +19,6 @@
 #include "Vec3.h"
 #include "stringUtils.h"
 #include "matrixIterator.h"
+#include "point.h"
 
 #endif //PCH_H

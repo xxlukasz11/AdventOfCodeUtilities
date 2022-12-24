@@ -169,6 +169,7 @@
     <ClInclude Include="neighborUtils.h" />
     <ClInclude Include="parserUtils.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="point.h" />
     <ClInclude Include="stringUtils.h" />
     <ClInclude Include="traits.h" />
     <ClInclude Include="Vec3.h" />
