@@ -188,3 +188,12 @@ struct Vec3 {
 };
 
 }
+
+namespace std {
+template <typename ValueType>
+struct hash<common::Vec3<ValueType>> {
+	size_t operator()(const common::Vec3<ValueType>& vec) const {
+		return std::hash<ValueType>()(vec.x) ^ std::hash<ValueType>()(vec.y) ^ std::hash<ValueType>()(vec.z);
+	}
+};
+}
