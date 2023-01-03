@@ -72,6 +72,14 @@ struct Dir {
 	Dir opposite() const {
 		return Dir{ -x, -y };
 	}
+
+	bool operator==(const Dir& dir) {
+		return dir.x == x && dir.y == y;
+	}
+
+	bool operator!=(const Dir& dir) {
+		return dir.x != x || dir.y != y;
+	}
 };
 
 /*
