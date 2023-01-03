@@ -73,11 +73,11 @@ struct Dir {
 		return Dir{ -x, -y };
 	}
 
-	bool operator==(const Dir& dir) {
+	bool operator==(const Dir& dir) const {
 		return dir.x == x && dir.y == y;
 	}
 
-	bool operator!=(const Dir& dir) {
+	bool operator!=(const Dir& dir) const {
 		return dir.x != x || dir.y != y;
 	}
 };
