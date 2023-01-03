@@ -68,21 +68,11 @@ struct Dir {
 
 	int x;
 	int y;
+
+	Dir opposite() const {
+		return Dir{ -x, -y };
+	}
 };
-
-/*
-Try to get neighbor cell in the provided direction
-
-@param container - 2 dimensional array
-@param row - index of a center cell row
-@param col - index of a center cell column
-@param dir - direction of the neighbor cell
-@returns neighbor cell or std::nullopt if cell does not exist
-*/
-template<typename Container>
-std::optional<typename Container::value_type::value_type> tryGet(const Container& container, int row, int col, Dir dir) {
-	return tryGet(container, row + dir.y, col + dir.x);
-}
 
 /*
 Try to get calue from the container
@@ -100,6 +90,20 @@ std::optional<typename Container::value_type::value_type> tryGet(const Container
 		return container[row][col];
 	}
 	return std::nullopt;
+}
+
+/*
+Try to get neighbor cell in the provided direction
+
+@param container - 2 dimensional array
+@param row - index of a center cell row
+@param col - index of a center cell column
+@param dir - direction of the neighbor cell
+@returns neighbor cell or std::nullopt if cell does not exist
+*/
+template<typename Container>
+std::optional<typename Container::value_type::value_type> tryGet(const Container& container, int row, int col, Dir dir) {
+	return tryGet(container, row + dir.y, col + dir.x);
 }
 
 } // namespace
